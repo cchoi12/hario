@@ -1,0 +1,2 @@
+module CoffeebeansHelper
+end
