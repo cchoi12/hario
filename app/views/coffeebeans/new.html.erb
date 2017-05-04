@@ -1,0 +1,13 @@
+<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 card form">
+
+  <h1> New Beans </h1>
+
+  <%= simple_form_for @coffeebeans do |f| %>
+    <%= f.input :name %>
+    <%= f.input :brand %>
+    <%= f.input :roast_type %>
+    <%= f.input :best_by %>
+    <%= f.submit 'Post it mon!', class: 'my-btn' %>
+  <% end %>
+
+</div>

@@ -4,6 +4,7 @@
     <title>Hario</title>
     <%= csrf_meta_tags %>
 
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -25,13 +26,12 @@
           <li>
             <%= link_to new_coffeebean_path do %>
               <i class="glyphicon glyphicon-tint"></i>
-              New Mug
+              New Beans
             <% end %>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
-            <li><%= link_to 'My Profile', user_path(current_user) %></li>
             <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to 'Sign in', new_user_session_path %></li>
