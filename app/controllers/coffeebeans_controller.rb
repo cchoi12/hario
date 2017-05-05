@@ -3,7 +3,7 @@ class CoffeebeansController < ApplicationController
 
   def show
     @coffeebeans = Coffeebean.find_by_id(params[:id])
-    return render_not_found if @gram.blank?
+    # return render_not_found if @coffeebeans.blank?
   end
 
   def new
@@ -15,8 +15,12 @@ class CoffeebeansController < ApplicationController
   end
 
   def create
-    current_user.coffeebeans.create(coffee_params)
-    redirect_to root_path
+    @coffeebeans = current_user.coffeebeans.create(coffee_params)
+    if @coffeebeans.valid?
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -27,6 +31,13 @@ class CoffeebeansController < ApplicationController
   private
 
   def coffee_params
-    params.require(:coffeebeans).permit(:name, :brand, :roast_type, :best_by)
+    params.require(:coffeebean).permit(
+      :name,
+      :brand,
+      :roast_type,
+      :best_by,
+      :notes,
+      :score
+    )
   end
 end
