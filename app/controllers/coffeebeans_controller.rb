@@ -27,6 +27,6 @@ class CoffeebeansController < ApplicationController
   private
 
   def coffee_params
-    params.require(:coffeebeans).permit(:name, :roast_type, :best_by)
+    params.require(:coffeebeans).permit(:name, :brand, :roast_type, :best_by)
   end
 end

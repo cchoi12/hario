@@ -4,6 +4,12 @@
     <h1><%= coffee.name %></h1><br />
     <i><%= coffee.roast_type %></i><br />
     <p><%= coffee.best_by %></p><br />
+
+    <br />
+
+    <% if coffee.user.present? %>
+      <small><%= place.user.email %></small>
+    <% end %>
   </div>
 
   <hr />
