@@ -7,6 +7,8 @@
     <%= f.input :brand %>
     <%= f.input :roast_type %>
     <%= f.input :best_by %>
+    <%= f.input :notes %>
+    <%= f.input :score, collection: 1..10 %>
     <%= f.submit 'Change it mon!', class: 'my-btn' %>
   <% end %>
 

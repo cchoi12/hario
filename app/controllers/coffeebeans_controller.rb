@@ -10,6 +10,10 @@ class CoffeebeansController < ApplicationController
     @coffeebeans = Coffeebean.new
   end
 
+  def update
+    
+  end
+
   def index
     @coffeebeans = Coffeebean.all
   end
@@ -24,7 +28,7 @@ class CoffeebeansController < ApplicationController
   end
 
   def edit
-    @coffeebeans = Gram.find_by_id(params[:id])
+    @coffeebeans = Coffeebean.find_by_id(params[:id])
     return render_not_found if @coffeebeans.blank?
   end
 
