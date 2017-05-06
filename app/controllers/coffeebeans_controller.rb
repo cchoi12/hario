@@ -1,5 +1,5 @@
 class CoffeebeansController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :index]
 
   def show
     @coffeebeans = Coffeebean.find_by_id(params[:id])
@@ -11,7 +11,17 @@ class CoffeebeansController < ApplicationController
   end
 
   def update
-    
+    @coffeebeans = Coffeebean.find(params[:id])
+    if @coffeebeans.user != current_user
+        return render text: 'Not Allowed', status: :forbidden
+    end
+
+    @coffeebeans.update_attributes(coffee_params)
+    if @coffeebeans.valid?
+        redirect_to root_path
+    else
+        render :edit, status: :unprocessable_entity
+    end
   end
 
   def index
@@ -29,6 +39,11 @@ class CoffeebeansController < ApplicationController
 
   def edit
     @coffeebeans = Coffeebean.find_by_id(params[:id])
+
+    if @coffeebeans.user != current_user
+      return render text: 'Cant do that mon', status: :forbidden
+    end
+
     return render_not_found if @coffeebeans.blank?
   end
 
