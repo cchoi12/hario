@@ -1,23 +1,19 @@
-<h3> My Shelf </h3>
-
+<h3 class="text-center"> <strong>My Shelf</strong></h3>
+<br /><br /><br />
   <% @coffeebeans.each do |coffee| %>
-  <div class="card col-xs-10 col-offset-1">
-    <div class="card-block">
+  <div class="card">
+    <div class="card-block the-box col-xs-10 col-xs-offset-1">
       <h4 class="card-title"> <%= coffee.name %> </h4>
       <h6 class="card-subtitle mb-2 text-muted"> <%= coffee.brand %> </h6>
       <h6 class="card-subtitle mb-2 text-muted"> <%= coffee.roast_type %> </h6>
       <p class="card-text"> <strong>Notes:</strong> <%= coffee.notes %> </p>
       <p class="card-text"> <strong>Best by:</strong> <%= coffee.best_by %> </p>
       <p class="card-text"> <strong>My Score:</strong> <%= coffee.score %> </p>
-    </div>
-    <br />
-  </div>
-
-    <div class="pull-right">
       <% if current_user == coffee.user %>
         <%= link_to 'Edit', edit_coffeebean_path(coffee) %>
         <%= link_to 'Delete', coffeebean_path(coffee), method: :delete, data: {confirm: 'You sure about that?'} %>
       <% end %>
     </div>
+    <br />
   <% end %>
   </div>
