@@ -24,9 +24,12 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li>
-            <%= link_to new_coffeebean_path do %>
-              <i class="glyphicon glyphicon-tint"></i>
-              New Beans
+            <% if user_signed_in? %>
+              <%= link_to new_coffeebean_path do %>
+                <i class="glyphicon glyphicon-tint"></i><br />
+                <i class="glyphicon glyphicon-profile"></i>
+                New Beans
+              <% end %>
             <% end %>
           </li>
         </ul>
@@ -37,7 +40,6 @@
             <li><%= link_to 'Log in', new_user_session_path %></li>
             <li><%= link_to 'Register', new_user_registration_path %></li>
           <% end %>
-          <li><a href="#">Placeholder</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
