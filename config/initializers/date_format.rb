@@ -1,0 +1,6 @@
+Date::DATE_FORMATS[:default] = '%Y-%m-%d'
+Date::DATE_FORMATS[:short] = '%m/%d/%y'
+Date::DATE_FORMATS[:month_year] = '%m/%y'
+Date::DATE_FORMATS[:project_release] = '%B %-d, %Y'
+Date::DATE_FORMATS[:project_release_short] = '%b %d, %Y'
+Date::DATE_FORMATS[:verbose] = '%B %-d, %Y'
