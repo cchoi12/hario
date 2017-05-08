@@ -5,12 +5,25 @@
   <%= simple_form_for @coffeebeans do |f| %>
     <%= f.input :name %>
     <%= f.input :brand %>
-    <%= f.input :roast_type %>
+    <%= f.input :roast_type, as: :select,
+                collection: ["Light Roast",
+                               "Light City",
+                               "Half City",
+                               "Cinnamon",
+                               "Medium Roast",
+                               "City",
+                               "American",
+                               "Breakfast",
+                               "Full City",
+                               "Dark Roast",
+                               "Continental",
+                               "European",
+                               "Espresso",
+                               "Italian",
+                               "French"] %>
     <%= f.input :best_by %>
     <%= f.input :notes %>
     <%= f.input :score, collection: 1..10 %>
     <br />
     <%= f.submit 'Post it mon!', class: 'my-btn' %>
   <% end %>
-
-</div>
