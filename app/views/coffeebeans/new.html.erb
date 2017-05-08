@@ -21,7 +21,7 @@
                                "Espresso",
                                "Italian",
                                "French"] %>
-    <%= f.input :best_by %>
+    <%= f.input :best_by, as: :datepicker %>
     <%= f.input :notes %>
     <%= f.input :score, collection: 1..10 %>
     <br />
