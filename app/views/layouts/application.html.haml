@@ -1,0 +1,38 @@
+!!!
+%html
+  %head
+    %title Hario
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    %nav.navbar.navbar-inverse
+      .container-fluid
+        .navbar-header
+          %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to 'Hario', root_path, class: 'navbar-brand'
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li
+              - if user_signed_in?
+                = link_to new_coffeebean_path do
+                  %i.glyphicon.glyphicon-tint
+                  New Beans
+          %ul.nav.navbar-nav.navbar-right
+            - if user_signed_in?
+              %li= link_to 'Sign out', destroy_user_session_path, method: :delete
+            - else
+              %li= link_to 'Log in', new_user_session_path
+              %li= link_to 'Register', new_user_registration_path
+        / /.navbar-collapse
+      / /.container-fluid
+    - if notice.present?
+      %p.alert.alert-info= notice
+    - if alert.present?
+      %p.alert.alert-danger
+        - alert
+    = yield
