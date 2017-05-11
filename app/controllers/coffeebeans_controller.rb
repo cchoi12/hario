@@ -1,5 +1,6 @@
 class CoffeebeansController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :index]
+  before_action :owned_beans, only: [:edit, :update, :destroy]  
 
   def show
     @coffeebeans = Coffeebean.find_by_id(params[:id])
@@ -48,6 +49,13 @@ class CoffeebeansController < ApplicationController
   end
 
   private
+
+  def owned_beans
+    unless current_user == @coffeebeans.user
+      flash[:alert] = "Them beans don't belong to you!"
+      redirect_to root_path
+    end
+  end
 
   def coffee_params
     params.require(:coffeebean).permit(
