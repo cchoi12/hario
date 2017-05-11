@@ -13,7 +13,7 @@ class CoffeebeansController < ApplicationController
   def update
     @coffeebeans = Coffeebean.find(params[:id])
     if @coffeebeans.user != current_user
-        return render text: 'Not Allowed', status: :forbidden
+        return render text: 'Cant let you do that', status: :forbidden
     end
 
     @coffeebeans.update_attributes(coffee_params)
