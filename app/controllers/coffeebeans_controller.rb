@@ -1,6 +1,5 @@
 class CoffeebeansController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :index]
-  before_action :owned_beans, only: [:edit, :update, :destroy]  
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def show
     @coffeebeans = Coffeebean.find_by_id(params[:id])
@@ -9,6 +8,15 @@ class CoffeebeansController < ApplicationController
 
   def new
     @coffeebeans = Coffeebean.new
+  end
+
+  def create
+    @coffeebeans = current_user.coffeebeans.create(coffee_params)
+    if @coffeebeans.valid?
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def update
@@ -29,15 +37,6 @@ class CoffeebeansController < ApplicationController
     @coffeebeans = Coffeebean.all
   end
 
-  def create
-    @coffeebeans = current_user.coffeebeans.create(coffee_params)
-    if @coffeebeans.valid?
-      redirect_to root_path
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
-
   def edit
     @coffeebeans = Coffeebean.find_by_id(params[:id])
 
@@ -48,14 +47,17 @@ class CoffeebeansController < ApplicationController
     return render_not_found if @coffeebeans.blank?
   end
 
-  private
-
-  def owned_beans
-    unless current_user == @coffeebeans.user
-      flash[:alert] = "Them beans don't belong to you!"
-      redirect_to root_path
+  def destroy
+    @coffeebeans = Coffeebean.find_by_id(params[:id])
+    if @coffeebeans.user != current_user
+      return render text: 'Sorry you arent the father', status: :forbidden
     end
+
+    @coffeebeans.destroy
+    redirect_to root_path
   end
+
+  private
 
   def coffee_params
     params.require(:coffeebean).permit(

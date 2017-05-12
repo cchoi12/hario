@@ -10,6 +10,7 @@
       <p class="card-text"> <strong>Notes:</strong> <%= coffee.notes %> </p>
       <p class="card-text"> <strong>Best by:</strong> <%= datetime_to_compact_date coffee.best_by %> </p>
       <p class="card-text"> <strong>My Score:</strong> <%= coffee.score %> </p>
+      <p class="card-text"> <%= coffee.user.user_name %> </p>
       <% if current_user == coffee.user %>
         <%= link_to 'Edit', edit_coffeebean_path(coffee), class: 'btn-warning btn' %>
         <%= link_to 'Delete', coffeebean_path(coffee), method: :delete, data: {confirm: 'You sure about that?'}, class: 'btn-danger btn' %>
