@@ -25,6 +25,21 @@ html {
   height: 100%;
 }
 
+.index-bg {
+  background-image: image-url('lotbeans.jpg');
+  background-size: 100% auto;
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+
+}
+
 .registration-bg {
   padding-top: 5em;
   background-image: image-url('coffeesplash.png');
