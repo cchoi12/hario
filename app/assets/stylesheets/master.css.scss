@@ -20,3 +20,68 @@
   margin-bottom: 15px;
   padding: 20px;
 }
+
+html {
+  height: 100%;
+}
+
+.registration-bg {
+  padding-top: 5em;
+  background-image: image-url('coffeesplash.png');
+  background-size: 100% auto;
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+}
+
+.coffeebeans-bg {
+  padding-top: 5em;
+  background-image: image-url('lotbeans.jpg');
+  background-size: 100% auto;
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+}
+
+.log-in{
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
+  border: none;
+}
+
+.panel {
+  border-radius: 8px;
+}
+
+.panel-heading{
+  h1 {
+    text-align: center;
+  }
+}
+.login-bg {
+  padding-top: 5em;
+  background-image: image-url('coffeesplash.png');
+  background-size: 100% auto;
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+}
