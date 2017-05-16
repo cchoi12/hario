@@ -110,3 +110,20 @@ html {
   /* Set up positioning */
   position: fixed;
 }
+.wrapper {
+  width:50%;
+  margin:0 auto;
+}
+
+.line {
+  display: table;
+  white-space: nowrap;
+}
+
+.line:before,
+.line:after {
+  background: linear-gradient(to bottom, #9FD35F, #4F8C31) no-repeat center / 98% 3px;
+  content: '';
+  display: table-cell;
+  width: 50%;
+}
