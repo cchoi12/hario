@@ -2,11 +2,11 @@
 %h4.text-center.text-muted
   = @user.user_name
 %br
-%h3.text-center Your Coffeebeans
-%div
+%h3.text-center.strong My Shelf
+%container
   - @user.coffeebeans.each do |coffee|
-    .card.center-block
-      .card-block.the-box.col-xs-6.col-xs-offset-1.col-md-6.col-md-offset-3
+    .card.center-block.col-xs-6.col-md-6.col-md-offset-1
+      .card-block.the-box
         %h4.text-center.card-title
           = coffee.name
         %h6.text-center.card-subtitle.mb-2.text-muted
