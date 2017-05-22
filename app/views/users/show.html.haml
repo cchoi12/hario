@@ -3,27 +3,28 @@
   = @user.user_name
 %br
 %h3.text-center.strong My Shelf
-%container
-  - @user.coffeebeans.each do |coffee|
-    .card.center-block.col-xs-6.col-md-6.col-md-offset-1
-      .card-block.the-box
-        %h4.text-center.card-title
-          = coffee.name
-        %h6.text-center.card-subtitle.mb-2.text-muted
-          = coffee.brand
-        %h6.text-center.card-subtitle.mb-2.text-muted
-          = coffee.roast_type
-        %p.card-text
-          %strong Notes:
-          = coffee.notes
-        %p.card-text
-          %strong Best by:
-          = datetime_to_compact_date coffee.best_by
-        %p.card-text
-          %strong My Score:
-          = coffee.score
-        %p.card-text
-        - if current_user == coffee.user
-          = link_to 'Edit', edit_coffeebean_path(coffee), class: 'btn-warning btn'
-          = link_to 'Delete', coffeebean_path(coffee), method: :delete, data: {confirm: 'You sure about that?'}, class: 'btn-danger btn'
-      %br/
+%div
+  %container
+    - @user.coffeebeans.each do |coffee|
+      .card.center-block.col-xs-6.col-md-6.col-md-offset-1
+        .card-block.the-box
+          %h4.text-center.card-title
+            = coffee.name
+          %h6.text-center.card-subtitle.mb-2.text-muted
+            = coffee.brand
+          %h6.text-center.card-subtitle.mb-2.text-muted
+            = coffee.roast_type
+          %p.card-text
+            %strong Notes:
+            = coffee.notes
+          %p.card-text
+            %strong Best by:
+            = datetime_to_compact_date coffee.best_by
+          %p.card-text
+            %strong My Score:
+            = coffee.score
+          %p.card-text
+          - if current_user == coffee.user
+            = link_to 'Edit', edit_coffeebean_path(coffee), class: 'btn-warning btn'
+            = link_to 'Delete', coffeebean_path(coffee), method: :delete, data: {confirm: 'You sure about that?'}, class: 'btn-danger btn'
+        %br
