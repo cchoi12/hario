@@ -100,6 +100,7 @@ html {
     text-align: center;
   }
 }
+
 .login-bg {
   padding-top: 5em;
   background-image: image-url('coffeesplash.png');
@@ -117,17 +118,4 @@ html {
 .wrapper {
   width:50%;
   margin:0 auto;
-}
-
-.line {
-  display: table;
-  white-space: nowrap;
-}
-
-.line:before,
-.line:after {
-  background: linear-gradient(to bottom, #9FD35F, #4F8C31) no-repeat center / 98% 3px;
-  content: '';
-  display: table-cell;
-  width: 50%;
 }
