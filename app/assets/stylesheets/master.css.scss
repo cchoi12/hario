@@ -1,7 +1,23 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.row {text-align: center}
+.yachtz {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	background: none;
+}
+
+.land {
+  background: url('lotbeans.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.body {
+  padding-top: 70px;
+}
 
 .center-block {
   display: block;
@@ -32,7 +48,7 @@
 }
 
 html {
-  height: 100%;
+  height: auto;
 }
 
 .index-bg {
@@ -96,11 +112,12 @@ html {
     text-align: center;
   }
 }
+
 .login-bg {
   padding-top: 5em;
   background-image: image-url('coffeesplash.png');
-  background-size: 100% auto;
-  min-height: 100%;
+  background-size: auto;
+  min-height: auto;
   min-width: 1024px;
 
   /* Set up proportionate scaling */
@@ -113,17 +130,4 @@ html {
 .wrapper {
   width:50%;
   margin:0 auto;
-}
-
-.line {
-  display: table;
-  white-space: nowrap;
-}
-
-.line:before,
-.line:after {
-  background: linear-gradient(to bottom, #9FD35F, #4F8C31) no-repeat center / 98% 3px;
-  content: '';
-  display: table-cell;
-  width: 50%;
 }
