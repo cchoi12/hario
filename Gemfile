@@ -28,6 +28,7 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
+gem 'pry-rails', :group => :development
 gem 'simple_form'
 gem 'devise'
 gem 'sprockets'
