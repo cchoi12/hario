@@ -1,0 +1,15 @@
+.login-bg
+  .container
+    .row
+      .col-xs-6.col-xs-offset-1.col-md-5.col-md-offset-4
+        .log-in.panel
+          .panel-heading
+            %h2 Log in
+          = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            = f.error_notification
+            .panel-body
+              = f.input :email, required: true, autofocus: true, label: false, placeholder: 'Email', input_html: { class: 'input-lg' }
+              = f.input :password, required: true, label: false, placeholder: 'Password', input_html: { class: 'input-lg' }
+              = f.button :submit, "Log in", class: 'btn-lg btn-info btn-block'
+            .card.mx-auto
+              %p= link_to 'Forgot Your Password?', new_user_password_path, class: 'btn'

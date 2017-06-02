@@ -1,12 +1,38 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.row {text-align: center}
+.yachtz {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	background: none;
+}
+
+.land {
+  background: url('lotbeans.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.body {
+  padding-top: 70px;
+}
 
 .center-block {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.vertical-container {
+  height: 300px;
+  display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
 }
 
 .the-box {
@@ -19,4 +45,89 @@
   margin-top: 10px;
   margin-bottom: 15px;
   padding: 20px;
+}
+
+html {
+  height: auto;
+}
+
+.index-bg {
+  background-image: image-url('lotbeans.jpg');
+  background-size: 100% auto;
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+
+}
+
+.registration-bg {
+  padding-top: 5em;
+  background-image: image-url('coffeesplash.png');
+  background-size: 100% auto;
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+}
+
+.coffeebeans-bg {
+  padding-top: 5em;
+  background-image: image-url('lotbeans.jpg');
+  background-size: 100% auto;
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+}
+
+.log-in{
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
+  border: none;
+}
+
+.panel {
+  border-radius: 8px;
+}
+
+.panel-heading{
+  h1 {
+    text-align: center;
+  }
+}
+
+.login-bg {
+  padding-top: 5em;
+  background-image: image-url('coffeesplash.png');
+  background-size: auto;
+  min-height: auto;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+}
+.wrapper {
+  width:50%;
+  margin:0 auto;
 }
